@@ -1,8 +1,5 @@
-#include <iostream>
-#include <sys/stat.h>
+#include "util.h"
 #include <z3++.h>
-
-inline bool exists_file (const std::string &);
 
 int main(int argc, char * argv[]){
 
@@ -14,13 +11,18 @@ int main(int argc, char * argv[]){
     case 2:
       {
         char * file_path = argv[1];
-        if(!exists_file(file_path)){
+        if(!util::exists_file(file_path)){
           std::cerr << "File not found" << std::endl;
           return 1;
         }
         z3::solver input_parser(ctx);
-        input_parser.from_file(file_path);
-        std::cout << input_parser.assertions() << std::endl;
+        try {
+          input_parser.from_file(file_path);
+          std::cout << input_parser.assertions() << std::endl;
+        }
+        catch(char * e){
+          std::cerr << e << std::endl;
+        }
         return 0;
       }
     default:
@@ -28,9 +30,3 @@ int main(int argc, char * argv[]){
       return 1;
   }
 }
-
-inline bool exists_file (const std::string & name) {
-  struct stat buffer;   
-  return (stat (name.c_str(), &buffer) == 0); 
-}
-
