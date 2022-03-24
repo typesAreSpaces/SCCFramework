@@ -23,7 +23,7 @@ DEPS=$(wildcard $(IDIR)/*.h)
 OBJS=$(SRC:$(SDIR)/%.cpp=$(ODIR)/%.o) $(Z3_DIR)/libz3.$(SO_EXT)
 FLAGS=-I$(SDIR) -I$(IDIR) -std=c++11 -Wall
 
-#FILE_TEST=$(TEST_DIR)/?
+FILE_TEST=$(TEST_DIR)/smt2files/test_1.smt2
 
 all: test
 
@@ -39,7 +39,7 @@ $(BIN): $(OBJS)
 # ----------------------------------------------------------
 
 test: $(BIN)
-	$(BIN)
+	$(BIN) $(FILE_TEST)
 
 # ----------------
 #  Cleaning
