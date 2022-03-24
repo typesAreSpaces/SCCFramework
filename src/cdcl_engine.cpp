@@ -71,6 +71,7 @@ z3::expr CDCL::abstract_atom(const z3::expr & equation){
 void CDCL::simple_cdcl(){
   if(z3::sat == prop_solver.check()){
     const auto & m = prop_solver.get_model();
+    std::cout << "Printing model" << std::endl;
     std::cout << m << std::endl;
   }
 }
