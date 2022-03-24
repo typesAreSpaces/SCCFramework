@@ -21,3 +21,6 @@ void SCCFramework::parse_file(char * file_path){
     throw e;
   }
 }
+
+void SCCFramework::algorithm(){
+}

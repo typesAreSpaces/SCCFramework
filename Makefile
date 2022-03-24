@@ -41,6 +41,9 @@ $(BIN): $(OBJS)
 test: $(BIN)
 	$(BIN) $(FILE_TEST)
 
+refresh_tags:
+	compiledb make test
+
 # ----------------
 #  Cleaning
 .PHONY: clean

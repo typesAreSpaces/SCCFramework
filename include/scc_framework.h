@@ -21,6 +21,7 @@ class SCCFramework {
   SCCFramework ();
 
   void parse_file(char *);
+  void algorithm();
 };
 
 #endif

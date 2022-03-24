@@ -10,6 +10,7 @@ int main(int argc, char * argv[]){
         SCCFramework scc_f;
         try {
           scc_f.parse_file(argv[1]);
+          scc_f.algorithm();
           return 0;
         }
         catch(char * e){
