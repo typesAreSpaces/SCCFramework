@@ -1,28 +1,21 @@
 #ifndef _SCC_FRAMEWORK_
 #define _SCC_FRAMEWORK_
 
-#include "util.h"
-#include <exception>
+#include "union_find.h"
 #include <z3++.h>
-
-//class myexception: public std::exception {
-  //virtual const char* what() const throw()
-  //{
-    //return "My exception happened";
-  //}
-//};
 
 class SCCFramework {
   
+  const z3::expr_vector & conjs;
   z3::context ctx;
-  z3::solver input_parser;
+
+  void flattenize();
+  void canonize();
+  void algorithm();
+  void normal_form();
 
   public:
-  SCCFramework ();
-
-  void parse_file(char *);
-  void algorithm();
+  SCCFramework (const z3::expr_vector &);
 };
 
 #endif
-

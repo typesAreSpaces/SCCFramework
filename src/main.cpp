@@ -1,4 +1,4 @@
-#include "scc_framework.h"
+#include "scc_cdcl.h"
 
 int main(int argc, char * argv[]){
 
@@ -7,10 +7,10 @@ int main(int argc, char * argv[]){
   switch(argc) {
     case 2:
       {
-        SCCFramework scc_f;
+        CombinedCDCLSCC a;
         try {
-          scc_f.parse_file(argv[1]);
-          scc_f.algorithm();
+          a.parse_file(argv[1]);
+          a.algorithm();
           return 0;
         }
         catch(char * e){

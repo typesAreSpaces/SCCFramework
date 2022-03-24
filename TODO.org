@@ -1,7 +1,10 @@
 # SCC Framework Implementation TODO list
 
-* TODO Implement basic SCC framework
-* TODO Use z3 to encode formulas in the SCC framework as propositional variables
 * TODO Use z3's CDCL/SAT solving capabilities to build/extend the SCC framework, i.e. implement a CDCL reasoner using z3. Check the following for reference:
 ** https://theory.stanford.edu/~nikolaj/programmingz3.html#sec-cdclt
 ** https://gist.github.com/codersguild/c40672ca5eeaab66b13a0a265eae03f6
+
+* TODO Implement basic SCC framework
+
+* COMPLETED Use z3 to encode formulas in the SCC framework as propositional variables
+CLOSED: [2022-03-24 Thu 02:02]

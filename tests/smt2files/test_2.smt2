@@ -1,0 +1,11 @@
+(declare-sort A 0)
+(declare-fun f (A) A)
+(declare-fun a () A)
+(declare-fun b () A)
+
+(assert (or (distinct (f a) a) (= (f a) b)))
+(assert (= (f (f a)) a))
+(assert (distinct a b))
+(assert (or (distinct (f b) a) (= (f b) b)))
+(assert (= (f (f b)) b))
+(check-sat)
