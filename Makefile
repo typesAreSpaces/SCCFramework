@@ -23,7 +23,7 @@ DEPS=$(wildcard $(IDIR)/*.h)
 OBJS=$(SRC:$(SDIR)/%.cpp=$(ODIR)/%.o) $(Z3_DIR)/libz3.$(SO_EXT)
 FLAGS=-I$(SDIR) -I$(IDIR) -std=c++17 -Wall
 
-FILE_TEST=$(TEST_DIR)/smt2files/test_2.smt2
+FILE_TEST=$(TEST_DIR)/smt2files/nfs_proposal_example_1.smt2
 
 all: test
 
