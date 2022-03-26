@@ -5,7 +5,7 @@ SDIR=$(CURRENT_DIR)/src
 LDIR=$(CURRENT_DIR)/lib
 TEST_DIR=$(CURRENT_DIR)/tests
 BIN=$(CURRENT_DIR)/bin/scc
-Z3_DIR=$(HOME)/Documents/GithubProjects/z3/build
+Z3_DIR=/usr/lib
 
 CXX=g++
 OS=$(shell uname)
